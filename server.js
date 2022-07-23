@@ -14,9 +14,9 @@ app.use(express.static(path.join(__dirname, "/public")));
 // include and initialize the rollbar library with your access token
 var Rollbar = require('rollbar')
 var rollbar = new Rollbar({
-    accessToken: '25611a7d3f11452ba0b15c5d7266978d',
-    captureUncaught: true,
-    captureUnhandledRejections: true,
+  accessToken: 'b27af1903ce645f2b4c725669e7eca7e',
+  captureUncaught: true,
+  captureUnhandledRejections: true,
 })
 
 // record a generic message and send it to Rollbar
