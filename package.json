@@ -10,6 +10,7 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+
   "dependencies": {
     "@types/jest": "^27.0.2",
     "@types/selenium-webdriver": "^4.0.16",
