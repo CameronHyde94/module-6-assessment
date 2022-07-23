@@ -37,7 +37,7 @@ rollbar.log('Hello world!')
 
 app.get('http://localhost:3000/api/robots', (req, res) => {
     try {
-        rollbar.info("Success in getting bots");
+        rollbar.info("Success for robots");
         res.status(200).send(botsArr)
     } catch (error) {
         console.log('ERROR GETTING BOTS', error)
@@ -47,7 +47,7 @@ app.get('http://localhost:3000/api/robots', (req, res) => {
 
 app.get('http://localhost:3000/api/robots/five', (req, res) => {
     try {
-        rollbar.info("5 bots displayed succcessfully");
+        rollbar.info("bots showed successfully");
         let shuffled = shuffleArray(bots)
         let choices = shuffled.slice(0, 5)
         let compDuo = shuffled.slice(6, 8)
@@ -79,15 +79,15 @@ app.post('http://localhost:3000/api/duel', (req, res) => {
         // comparing the total health to determine a winner
         if (compHealthAfterAttack > playerHealthAfterAttack) {
             playerRecord.losses++
-            rollbar.info("loser-ville");
+            rollbar.info("you've lost");
             res.status(200).send('You lost!')
         } else {
             playerRecord.losses++
-            rollbar.info("We have a winner!");
+            rollbar.info("You win!");
             res.status(200).send('You won!')
         }
     } catch (error) {
-        rollbar.error("Could not determine winner");
+        rollbar.error("Couldn't determine winner");
         console.log('ERROR DUELING', error)
         res.sendStatus(400)
     }
@@ -95,10 +95,10 @@ app.post('http://localhost:3000/api/duel', (req, res) => {
 
 app.get('http://localhost:3000/api/player', (req, res) => {
     try {
-        rollerbar.info("Player stats successful");
+        rollerbar.info("Player shows successfully");
         res.status(200).send(playerRecord)
     } catch (error) {
-        rollbar.error("Did not succeed in getting player stats");
+        rollbar.error("Player stats could not be found");
         console.log('ERROR GETTING PLAYER STATS', error)
         res.sendStatus(400)
     }
