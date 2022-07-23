@@ -4,7 +4,6 @@ const path = require('path');
 const app = express();
 const { bots, playerRecord } = require('./data');
 const { shuffleArray } = require('./utils');
-// const axios = require('axios').default;
 
 app.use(cors());
 app.use(express.json());
